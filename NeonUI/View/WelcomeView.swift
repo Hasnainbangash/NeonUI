@@ -9,10 +9,25 @@ import SwiftUI
 
 struct WelcomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .center, spacing: 60) {
+            ARImageView()
+            
+            VStack(alignment: .center, spacing: 30) {
+                Text("Watch movies in Virtual Reality")
+                    .font(.system(size: 34, weight: .bold))
+                    .multilineTextAlignment(.center)
+                
+                Text("Download and watch offline \nwherever you are")
+                    .font(.system(size: 16, weight: .medium))
+                    .multilineTextAlignment(.center)
+                
+                SignupButtonView()
+            }
+        }
     }
 }
 
 #Preview {
     WelcomeView()
+        .preferredColorScheme(.dark)
 }
