@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct ARImageView: View {
+    
+    @State private var rotation: Double = 0
+    
+    var animatedGradient: AngularGradient {
+        AngularGradient(
+            gradient: Gradient(colors:[
+                Color("ColorPink"),
+                Color("ColorLightBlue"),
+                Color("ColorLightGreen"),
+                Color("ColorPink")
+            ]),
+            center: .center,
+            angle: .degrees(rotation)
+        )
+    }
+    
     var body: some View {
         ZStack {
+            // Animated Gradient Border
             Circle()
-                .fill(gradient)
-                .frame(width: 338, height: 338)
+                .stroke(animatedGradient, lineWidth: 6)
+                .frame(width: 350, height: 350)
+                .onAppear {
+                    withAnimation(.linear(duration: 4).repeatForever(autoreverses: false)) {
+                        rotation = 360
+                    }
+                }
             
             Circle()
                 .fill(Color.black.opacity(0.4))
@@ -30,4 +52,5 @@ struct ARImageView: View {
 
 #Preview {
     ARImageView()
+        .preferredColorScheme(.dark)
 }
