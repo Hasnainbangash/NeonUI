@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     var body: some View {
-        VStack(alignment: .center, spacing: 60) {
+        VStack(alignment: .center, spacing: 50) {
             ARImageView()
             
             VStack(alignment: .center, spacing: 30) {
