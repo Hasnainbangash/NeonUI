@@ -19,6 +19,7 @@ struct WelcomeView: View {
                 
                 Text("Download and watch offline \nwherever you are")
                     .font(.system(size: 16, weight: .medium))
+                    .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                 
                 SignupButtonView()

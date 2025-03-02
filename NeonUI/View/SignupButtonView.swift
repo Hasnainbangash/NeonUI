@@ -18,7 +18,7 @@ struct SignupButtonView: View {
             Text("Sign up")
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundColor(.white)
-                .padding(.horizontal, 30)
+                .padding(.horizontal, 50)
                 .padding(.vertical, 10)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
