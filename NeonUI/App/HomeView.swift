@@ -12,7 +12,7 @@ struct HomeView: View {
     @State private var searchText: String = ""
     
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             Text("What would you like to watch?")
                 .font(.system(size: 30, weight: .bold))
                 .multilineTextAlignment(.center)
@@ -32,6 +32,10 @@ struct HomeView: View {
             .background(Color.black.opacity(0.3))
             .cornerRadius(12)
             .padding(.horizontal)
+            
+            MoviesSectionView(sectionName: "Popular Movies", images: ["image1", "image2", "image3"])
+            
+            MoviesSectionView(sectionName: "Upcoming Movies", images: ["image4", "image5", "image6"])
         }
     }
 }

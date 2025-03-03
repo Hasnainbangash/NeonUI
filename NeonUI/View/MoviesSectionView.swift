@@ -9,24 +9,27 @@ import SwiftUI
 
 struct MoviesSectionView: View {
     
-    var images: [Image] = [Image("image1"), Image("image2"), Image("image3")]
+    var sectionName: String
+    var images: [String]
     
     var body: some View {
-        Section(content: {
-            ScrollView(.horizontal) {
+        VStack(alignment: .leading) {
+            Text(sectionName)
+                .font(.system(size: 22, weight: .medium))
+                .foregroundColor(Color.secondary)
+                .padding()
+    
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(images, id: \.self) { image in
                         MoviesSectionItemView(image: image)
                     }
                 }
             }
-        }, header: {
-            Text("Popular View")
-                .font(.system(size: 18, weight: .medium))
-        })
+        }
     }
 }
 
 #Preview {
-    MoviesSectionView()
+    MoviesSectionView(sectionName: "Popular Movies", images: ["image1", "image2", "image3"])
 }
