@@ -9,11 +9,13 @@ import SwiftUI
 
 struct SignupButtonView: View {
     
+    @AppStorage("isMovingToHomeView") var isMovingToHomeView: Bool = false
     @State private var isAnimating: Bool = false
     
     var body: some View {
         Button(action: {
             print("Sign up tapped!")
+            isMovingToHomeView = true
         }) {
             Text("Sign up")
                 .font(.system(size: 18, weight: .semibold))

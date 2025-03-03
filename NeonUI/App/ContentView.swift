@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("isMovingToHomeView") var isMovingToHomeView: Bool = false
+
     var body: some View {
-        WelcomeView()
+        if isMovingToHomeView {
+            HomeView()
+        } else {
+            WelcomeView()
+        }
     }
 }
 
